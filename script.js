@@ -124,3 +124,16 @@ for (i=0;i<students.length; i++) {
 // const h1 = (...props) => {
 //     return `<h1 class="${props[0]}">${props[1]}</h1>`
 // }
+
+// Can you think of a way to make a more generic function that not only takes the style and content as arguments, but also the element type?
+function element(...props) {
+return `<${props[0]} class ="${props[1]}">"${props[2]}</${props[0]}>`
+
+} 
+
+const h1_alt = element("h1", "xx-large", "This is some text")
+
+document.querySelector("#alternate").innerHTML=(h1_alt)
+
+
+
