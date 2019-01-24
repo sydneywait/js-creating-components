@@ -75,23 +75,23 @@ const students = [
 
 
 // 10 of the students are currently passing the course, and 2 students are not. You want passing, and non-passing, student information to be styled differently. You want passing students' names to be green, and non-passing students to be orange.
-const h1 = (title, style) => {
-    return `<h1 class="${style}">${title}</h1>`
+const h1 = (...props) => {
+    return `<h1 class="${props[1]}">${props[0]}</h1>`
 }
 
-const section = (title, style) => {
-    return `<section class="bordered dashed ${style}">${title}</section>`
+const section = (...props) => {
+    return `<section class="bordered dashed ${props[1]}">${props[0]}</section>`
 }
 
 const aside = (title, style) => {
     return `<aside class="${style}">${title}</aside>`
 }
 
-const createStudentComponent = (name, studentClass, sectionContent, asideInfo) => `
+const createStudentComponent = (...props) => `
     <div id="student">
-        ${h1(name, studentClass)}
-        ${section(sectionContent, "section--padded")}
-        ${aside(asideInfo, "pushRight")}
+        ${h1(props[0], props[1])}
+        ${section(props[2], "section--padded")}
+        ${aside(props[3], "pushRight")}
     </div>
 `
 
