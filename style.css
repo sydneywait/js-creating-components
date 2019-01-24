@@ -36,3 +36,16 @@
 .message{
     color: red;
 }
+
+
+.message_dot{
+    color: blue
+}
+
+.message_syd{
+    color: green
+}
+
+.plain-text{
+    color: aqua;
+}
