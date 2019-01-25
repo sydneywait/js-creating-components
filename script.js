@@ -243,6 +243,42 @@ console.log("this is the wholeText object built one at a time", wholeText)
 
 
 
+// 2.
+// - Copy and paste the following code into your javascript file
+​
+const section = function(textParameter) {
+  return `<section class="bordered dashed">${textParameter}</section>`
+}
+​
+const h3 = function(textParameter) {
+  return `<h3>${textParameter}</h3>`
+}
+​
+const unorderedList = function(arrayParameter) {
+  let list = "";
+  for(let i = 0; i < arrayParameter.length; i++){
+    list += `<li>${arrayParameter[i]}</li>`
+  }
+  return `<ul>${list}</ul>`
+}
+​
+// - Your job is to build a function called buildInstructorComponent. The instructor component should include an h3 element, a section element, and a bulleted list of technologies that they know (just make some up)
+​
+const buildInstructorComponent = (h3Text, h3Section, listArray) => {
+
+    const h3Element = h3(h3Text);
+    const sectionElement = section(h3Section);
+    const listElement = unorderedList(listArray);
+    return `${h3Element} ${sectionElement} ${listElement}`;
+}
+
+const kimHTMLString = buildInstructorComponent("Kim", "Kim is great", ["HTLML", "JavaScript", "CSS", "PHP"])
+
+document.querySelector("#container").innerHTML=kimHTMLString;
+
+
+// - The buildInstructor function should call the three functions you just copied and pasted in your file
+
 
 
 
